@@ -107,6 +107,113 @@
       "artifacts": [
         "FlowRates"
       ]
+    },
+    "/Users/juan/Documents/Miset/Hackathons/2023-05-12 EthLisbon/repo/monorepo/juanito/contracts/FlowRates.sol": {
+      "lastModificationDate": 1683995259501,
+      "contentHash": "d2e6c40866bf71dc2198b4990af76494",
+      "sourceName": "contracts/FlowRates.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "FlowRates"
+      ]
+    },
+    "/Users/juan/Documents/Miset/Hackathons/2023-05-12 EthLisbon/repo/monorepo/juanito/contracts/IToken.sol": {
+      "lastModificationDate": 1683995259500,
+      "contentHash": "de83645ab47946dca052804fadf51d4d",
+      "sourceName": "contracts/IToken.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "IToken"
+      ]
+    },
+    "/Users/juan/Documents/Miset/Hackathons/2023-05-12 EthLisbon/repo/monorepo/juanito/contracts/Token.sol": {
+      "lastModificationDate": 1683995259499,
+      "contentHash": "6ec7154a1e5c50bd5ca5dbf43dd08b6c",
+      "sourceName": "contracts/Token.sol",
+      "solcConfig": {
+        "version": "0.8.18",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IToken.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "Token"
+      ]
     }
   }
 }

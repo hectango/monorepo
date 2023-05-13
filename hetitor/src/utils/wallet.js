@@ -64,7 +64,6 @@ function formatBalance(rawBalance) {
 export async function getBalanceToken(contractAddress) {
     await ethereum.request({ method: 'eth_requestAccounts' });
 
-
     //Now you need its provider
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     //To get signer and its address use function below:
@@ -74,13 +73,11 @@ export async function getBalanceToken(contractAddress) {
     const contract = await new ethers.Contract(contractAddress, contractABI.result, signer);
 
     console.log(contract)
-    const result = await contract.balanceOf(contractAddress).call();
-    console.log(result);
+    const balance = await contract.balanceOf('0x51159613973463Fd808718bb1D86056E16bd12E3');
+    console.log(balance);
 
-    return 1;
-}
+    const balanceFormatted = ethers.utils.formatUnits(balance, 18)
 
-function formatChainAsNum(chainIdHex) {
-    const chainIdNum = parseInt(chainIdHex);
-    return chainIdNum
+    console.log(balanceFormatted)
+    return balanceFormatted;
 }

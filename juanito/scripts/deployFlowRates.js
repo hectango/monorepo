@@ -8,8 +8,9 @@ async function main() {
     console.log("Account balance:", (await deployer.getBalance()).toString());
   
     /* FlowRates */
+    const defaultPlatformRate = 1000;
     const FlowRates = await hre.ethers.getContractFactory("FlowRates");
-    const rates = await FlowRates.deploy();
+    const rates = await FlowRates.deploy(defaultPlatformRate);
     console.log("FlowRates address:", rates.address);
     await rates.deployed();
 

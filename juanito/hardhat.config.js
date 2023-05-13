@@ -15,7 +15,7 @@ module.exports = {
     harry: {
       url: `https://rpc.ankr.com/polygon_mumbai`,
       accounts: [HARRY_PRIVATE_KEY],
-      gasPrice: 20000000000
+      gasPrice: 40000000000
     }
   }
 };

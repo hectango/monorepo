@@ -86,7 +86,7 @@ export async function getFlowRate(contractAddress, ownerAddress, videoId) {
     //To get signer and its address use function below:
     const signer = provider.getSigner();
 
-    const contract = await new ethers.Contract(contractAddress, flowRatesABIS.result, signer);
+    const contract = await new ethers.Contract(contractAddress, flowRatesABIS, signer);
 
     const balance = await contract.getRate(ownerAddress, videoId);
     console.log(balance);

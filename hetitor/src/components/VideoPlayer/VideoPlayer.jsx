@@ -24,7 +24,7 @@ function VideoPlayer(props) {
 
     useEffect(() => {
         getFlowRate(
-            '0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f',
+            '0x900Ed131ac712f60353305d076C0A50058239A86',
             videoInfo.ownerAddress,
             videoInfo.videoId
         ).then((rate) => setRateFlow(rate));

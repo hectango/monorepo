@@ -9,7 +9,8 @@ module.exports = {
   networks: {
     mumbai: {
       url: `https://rpc.ankr.com/polygon_mumbai`,
-      accounts: [MUMBAI_PRIVATE_KEY]
+      accounts: [MUMBAI_PRIVATE_KEY],
+      gasPrice: 20000000000
     }
   }
 };

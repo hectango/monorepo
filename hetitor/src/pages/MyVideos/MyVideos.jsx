@@ -6,7 +6,6 @@ import {getBalanceToken} from "../../utils/wallet.js";
 import Search from "../../components/Search/Search.jsx";
 
 const receiver = '0x2819Db886a1C12C74Edf3514F831dfA00bFc101F';
-const flowRate = "5787037037037";
 
 function MyVideos() {
     const [balance, setBalance] = useState(0);
@@ -46,7 +45,6 @@ function MyVideos() {
             return (
                 <VideoPlayer
                     receiver={receiver}
-                    flowRate={flowRate}
                     videoInfo={selectedVideoInfo}
                     onFlowCreated={(flow) => {
                         console.log(flow)

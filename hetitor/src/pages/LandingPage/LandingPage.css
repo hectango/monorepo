@@ -1,0 +1,53 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.Logo {
+    height: 55%;
+    margin-bottom: 10px;
+}
+
+.LogoText {
+    height: 6%;
+    margin-bottom: 40px;
+}
+
+.css-button-sliding-to-left--blue {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border-radius: 5px;
+    z-index: 0;
+    background: #fff;
+    overflow: hidden;
+    border: 2px solid #2c0b8e;
+    color: #2c0b8e;
+}
+.css-button-sliding-to-left--blue:hover {
+    color: #fff;
+}
+.css-button-sliding-to-left--blue:hover:after {
+    width: 100%;
+}
+.css-button-sliding-to-left--blue:after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    transition: all 0.3s ease;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    background: #2c0b8e;
+}

@@ -1,0 +1,38 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.Header_left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Header_right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LogoInRow {
+    height: 85px;
+}
+
+.LogoTextInRow_Container {
+    display: flex;
+    align-items: center;
+}
+
+.LogoTextInRow {
+    height: 37px;
+}
+
+.Text {
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.Text_bold {
+    margin-right: 3px;
+}

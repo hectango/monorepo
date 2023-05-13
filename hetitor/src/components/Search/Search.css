@@ -1,0 +1,31 @@
+.Search_Container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    height: 38px;
+    margin-bottom: 16px;
+}
+
+.Search_Input {
+    width: 60%;
+}
+
+.Search_Results_Container {
+    position: absolute;
+    background-color: white;
+    border: 1px solid grey;
+    min-height: 50px;
+    top: 43px;
+    width: 70%;
+    border-radius: 3px;
+    z-index: 100000;
+}
+
+.ResultItem {
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    align-items: center;
+    cursor: pointer;
+}

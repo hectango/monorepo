@@ -5,12 +5,14 @@ import {createNewFlow, deleteExistingFlow} from "../../utils/superfluid.js";
 import Play from '../../assets/play.png';
 import Pause from '../../assets/pause.png';
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner.jsx";
+import {getFlowRate} from "../../utils/wallet.js";
 
 function VideoPlayer(props) {
-    const {receiver, flowRate, onFlowCreated} = props;
+    const {receiver, flowRate, videoInfo, onFlowCreated} = props;
     const [isVideoPlaying, setIsVideoPlaying] = useState(false)
     const [flow, setFlow] = useState(null);
     const [isTalkingToBlockchain, setIsTalkingToBlockchain] = useState(false);
+    const [reateFlow, setRateFlow] = useState(null);
 
     const player = useRef(null);
 
@@ -19,6 +21,14 @@ function VideoPlayer(props) {
             onFlowCreated(flow);
         }
     }, [flow]);
+
+    useEffect(() => {
+        getFlowRate(
+            '0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f',
+            videoInfo.ownerAddress,
+            videoInfo.videoId
+        ).then((rate) => setRateFlow(rate));
+    }, []);
 
     function render() {
         return (
@@ -36,7 +46,6 @@ function VideoPlayer(props) {
                 {!isVideoPlaying && <img className={'IconButton'} src={Play} onClick={_onPlay}/>}
                 {isVideoPlaying && <img className={'IconButton'} src={Pause} onClick={_onPause}/>}
             </div>
-
         );
     }
 
@@ -50,11 +59,13 @@ function VideoPlayer(props) {
     }
 
     function _renderVideoPlayer() {
+        if(!reateFlow) return <div>Loading rate....</div>;
+
         return (
             <div className="VideoContainer">
                 <ReactHlsPlayer
                     playerRef={player}
-                    src="https://customer-wo7syqqap4g20awy.cloudflarestream.com/0d58d9d181fb619cce31def2509af262/manifest/video.m3u8"
+                    src={videoInfo.videoUrl}
                     width="800px"
                     height="auto"
                 />

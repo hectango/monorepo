@@ -72,12 +72,23 @@ export async function getBalanceToken(contractAddress) {
 
     const contract = await new ethers.Contract(contractAddress, contractABI.result, signer);
 
-    console.log(contract)
     const balance = await contract.balanceOf('0x51159613973463Fd808718bb1D86056E16bd12E3');
+
+    return ethers.utils.formatUnits(balance, 18)
+}
+
+export async function getFlowRate(contractAddress, ownerAddress, videoId) {
+    await ethereum.request({ method: 'eth_requestAccounts' });
+
+    //Now you need its provider
+    const provider = new ethers.providers.Web3Provider(window.ethereum);
+    //To get signer and its address use function below:
+    const signer = provider.getSigner();
+
+    const contract = await new ethers.Contract(contractAddress, contractABI.result, signer);
+
+    const balance = await contract.getRate(ownerAddress, videoId);
     console.log(balance);
 
-    const balanceFormatted = ethers.utils.formatUnits(balance, 18)
 
-    console.log(balanceFormatted)
-    return balanceFormatted;
 }

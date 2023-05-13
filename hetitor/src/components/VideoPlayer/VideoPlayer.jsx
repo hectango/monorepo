@@ -31,6 +31,8 @@ function VideoPlayer(props) {
     }, []);
 
     function render() {
+        if(!reateFlow) return <div>Loading rate....</div>;
+
         return (
             <Fragment>
                 {_renderOverlay()}
@@ -59,8 +61,6 @@ function VideoPlayer(props) {
     }
 
     function _renderVideoPlayer() {
-        if(!reateFlow) return <div>Loading rate....</div>;
-
         return (
             <div className="VideoContainer">
                 <ReactHlsPlayer

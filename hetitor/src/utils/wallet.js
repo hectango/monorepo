@@ -1,5 +1,6 @@
 import { ethers } from "ethers";
-import contractABI from '../fdaix.json';
+import contractABI from '../abis/fdaix.json';
+import flowRatesABIS from '../abis/FlowRates.json';
 
 export async function connectWallet() {
     try {
@@ -85,7 +86,7 @@ export async function getFlowRate(contractAddress, ownerAddress, videoId) {
     //To get signer and its address use function below:
     const signer = provider.getSigner();
 
-    const contract = await new ethers.Contract(contractAddress, contractABI.result, signer);
+    const contract = await new ethers.Contract(contractAddress, flowRatesABIS.result, signer);
 
     const balance = await contract.getRate(ownerAddress, videoId);
     console.log(balance);

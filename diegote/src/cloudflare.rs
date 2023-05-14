@@ -2,7 +2,7 @@ use anyhow::{anyhow, Result};
 
 use jsonwebtoken::{crypto, Algorithm, DecodingKey, EncodingKey};
 use reqwest::{header::HeaderMap, header::HeaderValue, Client, StatusCode, Url};
-use serde::{de::DeserializeOwned, Deserialize};
+use serde::Deserialize;
 
 #[derive(Debug)]
 struct CloudflareStreams {

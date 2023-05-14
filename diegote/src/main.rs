@@ -7,10 +7,18 @@ use axum::{
 use config::{Config, Environment};
 use serde::{Deserialize, Serialize};
 use settings::Settings;
+use sqlx::{postgres::PgPoolOptions, Pool, Postgres};
 use std::net::SocketAddr;
+use tracing::info;
 
-mod settings;
 mod cloudflare;
+mod handlers;
+mod settings;
+
+#[derive(Clone, Debug)]
+pub struct AppContext {
+    pub db_pool: Pool<Postgres>,
+}
 
 #[tokio::main]
 async fn main() {
@@ -24,13 +32,24 @@ async fn main() {
         .expect("deserializing settings");
     // initialize tracing
     tracing_subscriber::fmt::init();
+    info!("Starting up");
+
+    let db_pool = PgPoolOptions::new()
+        .max_connections(5)
+        .connect(&settings.db_url)
+        .await
+        .expect("postgres db pool");
+
+    let context = AppContext { db_pool };
 
     // build our application with a route
     let app = Router::new()
         // `GET /` goes to `root`
         .route("/", get(root))
         // `POST /users` goes to `create_user`
-        .route("/users", post(create_user));
+        .route("/users", post(create_user))
+        .route("/videos", get(handlers::get_videos))
+        .with_state(context);
 
     // run our app with hyper, listening globally on port 3000
     //let listener = tokio::net::TcpListener::bind("0.0.0.0:3000").await.unwrap();

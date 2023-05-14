@@ -3,7 +3,8 @@ const hre = require("hardhat");
 async function main() {
 
   const [loader] = await hre.ethers.getSigners();
-  const provider = await new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/polygon_mumbai');
+  const provider = await new ethers.providers.JsonRpcProvider('https://rpc.gnosischain.com'); // GNOSIS
+  //const provider = await new ethers.providers.JsonRpcProvider('https://rpc.ankr.com/polygon_mumbai'); // MUMBAI
   let nonceavo = await provider.getTransactionCount(loader.address);
 
   console.log("Nonce:", nonceavo);
@@ -14,7 +15,8 @@ async function main() {
     console.log("Account balance:", (await loader.getBalance()).toString());
     /* FlowRates load */
     //const deployedFlowRates = "0x081C1383Db2411E2a8Fb5EDf9aD48fC8F1E610F3";
-    const deployedFlowRates = "0x900Ed131ac712f60353305d076C0A50058239A86";
+    //const deployedFlowRates = "0x900Ed131ac712f60353305d076C0A50058239A86"; // MUMBAI
+    const deployedFlowRates = "0x6F5e799BeD6637fD19d27E68A71Ca46ab968BeFF"; // GNOSIS
     
     console.log("FlowRates address:", deployedFlowRates);
     const FlowRates = await hre.ethers.getContractFactory("FlowRates");

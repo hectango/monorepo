@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     {
         path: "/my-videos",
         element: <MyVideos/>,
-    },
+    }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

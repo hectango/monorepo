@@ -52,6 +52,14 @@ function MyVideos() {
                 />
             )
         }
+
+        return (
+            <div className="ResultArea_message">
+                <p className="ResultArea_textMessage">
+                    What do you want to watch today?
+                </p>
+            </div>
+        )
     }
 
     function _onSelectResult(videoInfo) {

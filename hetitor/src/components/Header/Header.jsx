@@ -28,7 +28,7 @@ function Header(props) {
     function _renderRightSide() {
         return (
             <div className="Header_right">
-                <p className="Text">{_formatAccount(account)}</p>
+                <p className="Text"><b className="Text_bold">Account:</b>{_formatAccount(account)}</p>
                 <p className="Text"><b className="Text_bold">Balance:</b>{balance}</p>
             </div>
         )

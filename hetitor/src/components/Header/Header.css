@@ -31,8 +31,10 @@
 .Text {
     margin-top: 1px;
     margin-bottom: 1px;
+    font-family: system-ui;
 }
 
 .Text_bold {
+    font-family: system-ui;
     margin-right: 3px;
 }

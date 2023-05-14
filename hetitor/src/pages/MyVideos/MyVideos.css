@@ -3,3 +3,15 @@
     border: 1px solid red;
 }
 
+.ResultArea_message {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    height: 259px;
+}
+
+.ResultArea_textMessage {
+    font-family: system-ui;
+    font-size: 28px;
+}

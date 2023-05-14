@@ -23,6 +23,8 @@
     "react-player": "^2.12.0",
     "react-router-dom": "^6.11.1",
     "sort-by": "^1.2.0",
+    "tus-js-client": "^3.1.0",
+    "use-tus": "^0.7.1",
     "video.js": "^8.3.0",
     "vidstack": "^0.5.2"
   },

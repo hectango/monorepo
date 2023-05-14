@@ -24,9 +24,9 @@ function Search(props) {
                     ownerAddress: '0x358A4567d62b6632169BBAdfA0884aB56b315c24',
                 },
                 {
-                    videoId: '0d58d9d181fb619cce31def2509af262',
+                    videoId: '8862758380f187fa168a44fb971a96bd',
                     text: 'Video 3',
-                    videoUrl: 'https://customer-wo7syqqap4g20awy.cloudflarestream.com/0d58d9d181fb619cce31def2509af262/manifest/video.m3u8',
+                    videoUrl: 'https://customer-wo7syqqap4g20awy.cloudflarestream.com/8862758380f187fa168a44fb971a96bd/manifest/video.m3u8',
                     ownerAddress: '0x358A4567d62b6632169BBAdfA0884aB56b315c24',
                 }
             ])
@@ -52,7 +52,7 @@ function Search(props) {
                                 onSelectResult(result)
                                 setResults([]);
                             }}>
-                                <b>{result.text}</b>
+                                <b className="ResultItem_videoText">{result.text}</b>
                             </div>
                         );
                     })}

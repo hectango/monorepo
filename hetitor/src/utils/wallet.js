@@ -74,8 +74,9 @@ export async function getBalanceToken(contractAddress) {
     const contract = await new ethers.Contract(contractAddress, contractABI.result, signer);
 
     const balance = await contract.balanceOf('0x51159613973463Fd808718bb1D86056E16bd12E3');
+    const formatedBalance = ethers.utils.formatUnits(balance, 18)
 
-    return ethers.utils.formatUnits(balance, 18)
+    return parseFloat(formatedBalance).toFixed(3);
 }
 
 export async function getFlowRate(contractAddress, ownerAddress, videoId) {
